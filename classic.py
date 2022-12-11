@@ -6,7 +6,7 @@ import math
 import sys
 import random
 
-__version__ = '0.1 Beta 9.2'
+__version__ = '0.1 Beta 9.3'
 
 
 class Attack:
@@ -293,14 +293,7 @@ def getn(n):
         t.append(x)
     return t
 def Clear(): 
-  if _platform == "linux" or _platform == "linux2":
     tmp = call('clear',shell=True)
-  elif _platform == "darwin":
-    tmp = call('cls',shell=True)
-  else:
-    print('Notice: Clear function not supported for your system\
-(supported on MacOS and Linux)')
-Clear()
 def xprint(stuff,st=0.05,fill=' '):
     columns = getTerminalSize()[0]
     c = ''
@@ -335,21 +328,13 @@ F       OOO   X   X  EEEEE   SSS
  ____________________________________________ 
 |  ____                      ___       ___   |
 | |    \       |            /   \     /   \  |
-| |    |      _|_          |     |        |  |
-| |____/   _   |            \___/|       /   |
-| |     \ / \  |  / \|           |      /    |
-| |     | ---  |  | ||           | ..  /     |
-| |_____/ \__  |  \_/|      \____/ .. /____  |
+| |    |      _|_          |     |         | |
+| |____/   _   |            \___/|      --<  |
+| |     \ / \  |  / \|           |         | |
+| |     | ---  | |   |           | ..      | |
+| |_____/ \__  |  \_/|      \____/ .. \___/  |
 |____________________________________________|
 ''')
-start()
-zz = input('Player 1\'s name: ')
-zy = input('Player 2\'s name: ')
-while zy == zz:
-    print('That username is already taken by Player 1.')
-    zy = input('Player 2\'s name: ')
-p1 = Animal(zz,getn(6))
-p2 = Animal(zy,getn(6))
 def rstart(mode=1):
     for i in range(3):
         print('Game starting in '+str(3-i)+' second(s).')
@@ -424,6 +409,8 @@ while True:
         
 
 '''
+Changelog version 0.1.9.3:
+    Bug fixes
 Changelog version 0.1.9.2:
     Removed easter eggs and tags (temp.)
     Changed looks of some menus and opening screen
